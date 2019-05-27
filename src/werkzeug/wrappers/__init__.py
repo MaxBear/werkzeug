@@ -21,6 +21,7 @@ decoded into an unicode object if possible and if it makes sense.
 from .accept import AcceptMixin
 from .auth import AuthorizationMixin
 from .auth import WWWAuthenticateMixin
+from .auth import X_WWWAuthenticateMixin
 from .base_request import BaseRequest
 from .base_response import BaseResponse
 from .common_descriptors import CommonRequestDescriptorsMixin

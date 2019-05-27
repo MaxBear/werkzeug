@@ -160,6 +160,7 @@ all_by_module = {
         "UserAgentMixin",
         "AuthorizationMixin",
         "WWWAuthenticateMixin",
+        "X_WWWAuthenticateMixin",
         "CommonRequestDescriptorsMixin",
     ],
     "werkzeug.middleware.dispatcher": ["DispatcherMiddleware"],

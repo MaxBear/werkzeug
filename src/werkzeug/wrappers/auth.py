@@ -31,3 +31,17 @@ class WWWAuthenticateMixin(object):
 
         header = self.headers.get("www-authenticate")
         return parse_www_authenticate_header(header, on_update)
+
+class X_WWWAuthenticateMixin(object):
+    """Adds a :attr:`x_www_authenticate` property to a response object."""
+
+    @property
+    def x_www_authenticate(self):
+        """The `x-www-authenticate` header in a parsed form."""
+        def on_update(x_www_auth):
+            if not x_www_auth and 'x-www-authenticate' in self.headers:
+                del self.headers['x-www-authenticate']
+            elif x_www_auth:
+                self.headers['x-www-authenticate'] = x_www_auth.to_header()
+        header = self.headers.get('x-www-authenticate')
+        return parse_www_authenticate_header(header, on_update)
